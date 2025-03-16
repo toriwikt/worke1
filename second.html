@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/second.css">
+    <title>Гра з очищення води | Water Purification Game</title>
+</head>
+<body>
+    <div class="container">
+        <section class="section game-section">
+            <div class="return-button-container">
+                <a href="./index.html" class="return-button">← Повернутися на головну | Return to Main</a>
+            </div>
+            <h1>Гра з очищення води | Water Purification Game</h1>
+            <div class="level-selector">
+                <h3>Виберіть рівень:</h3>
+                <div class="level-buttons-container">
+                    <button class="level-button" data-level="1">
+                        <span class="level-number">Рівень 1 | Level 1</span>
+                        <span class="level-title">Лісовий струмок | Forest Stream</span>
+                    </button>
+                    <button class="level-button" data-level="2">
+                        <span class="level-number">Рівень 2 | Level 2</span>
+                        <span class="level-title">Вода з колодязя | Well Water</span>
+                    </button>
+                    <button class="level-button" data-level="3">
+                        <span class="level-number">Рівень 3 | Level 3</span>
+                        <span class="level-title">Вода з міського озера | City Lake Water</span>
+                    </button>
+                    <button class="level-button" data-level="4">
+                        <span class="level-number">Рівень 4 | Level 4</span>
+                        <span class="level-title">Річкова вода | River Water</span>
+                    </button>
+                    <button class="level-button" data-level="5">
+                        <span class="level-number">Рівень 5 | Level 5</span>
+                        <span class="level-title">Промислові відходи | Industrial Waste</span>
+                    </button>
+                    <button class="level-button" data-level="6">
+                        <span class="level-number">Рівень 6 | Level 6</span>
+                        <span class="level-title">Радіоактивне забруднення | Radioactive Contamination</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="level-info">
+                <h2 id="current-level-title">Рівень 1: Базове очищення | Level 1: Basic Purification</h2>
+                <p id="level-description">Очистіть забруднену воду використовуючи базові фільтри | Purify contaminated water using basic filters</p>
+            </div>
+
+            <div class="game-container">
+                <div class="filters-container" id="available-filters">
+                    <!-- Level 1 Filters -->
+                    <div class="filter-item level-1" draggable="true" data-filter="carbon">
+                        <span>Вугільний фільтр | Carbon Filter</span>
+                    </div>
+                    <div class="filter-item level-1" draggable="true" data-filter="sand">
+                        <span>Пісочний фільтр | Sand Filter</span>
+                    </div>
+                    <div class="filter-item level-1" draggable="true" data-filter="uv">
+                        <span>УФ-стерилізатор | UV Sterilizer</span>
+                    </div>
+                    
+                    <!-- Level 2 Filters -->
+                    <div class="filter-item level-2" draggable="true" data-filter="carbon">
+                        <span>Вугільний фільтр | Carbon Filter</span>
+                    </div>
+                    <div class="filter-item level-2" draggable="true" data-filter="mineral">
+                        <span>Мінералізатор | Mineralizer</span>
+                    </div>
+                    <div class="filter-item level-2" draggable="true" data-filter="membrane">
+                        <span>Мембранний фільтр | Membrane Filter</span>
+                    </div>
+                    <div class="filter-item level-2" draggable="true" data-filter="uv">
+                        <span>УФ-стерилізатор | UV Sterilizer</span>
+                    </div>
+                    
+                    <!-- Level 3 Filters -->
+                    <div class="filter-item level-3" draggable="true" data-filter="carbon">
+                        <span>Вугільний фільтр | Carbon Filter</span>
+                    </div>
+                    <div class="filter-item level-3" draggable="true" data-filter="mineral">
+                        <span>Мінералізатор | Mineralizer</span>
+                    </div>
+                    <div class="filter-item level-3" draggable="true" data-filter="membrane">
+                        <span>Мембранний фільтр | Membrane Filter</span>
+                    </div>
+                    <div class="filter-item level-3" draggable="true" data-filter="uv">
+                        <span>УФ-стерилізатор | UV Sterilizer</span>
+                    </div>
+                    <div class="filter-item level-3" draggable="true" data-filter="chemical">
+                        <span>Хімічне очищення | Chemical Treatment</span>
+                    </div>
+                    
+                    <!-- Level 4 Filters -->
+                    <div class="filter-item level-4" draggable="true" data-filter="carbon">
+                        <span>Вугільний фільтр | Carbon Filter</span>
+                    </div>
+                    <div class="filter-item level-4" draggable="true" data-filter="mineral">
+                        <span>Мінералізатор | Mineralizer</span>
+                    </div>
+                    <div class="filter-item level-4" draggable="true" data-filter="membrane">
+                        <span>Мембранний фільтр | Membrane Filter</span>
+                    </div>
+                    <div class="filter-item level-4" draggable="true" data-filter="uv">
+                        <span>УФ-стерилізатор | UV Sterilizer</span>
+                    </div>
+                    <div class="filter-item level-4" draggable="true" data-filter="chemical">
+                        <span>Хімічне очищення | Chemical Treatment</span>
+                    </div>
+                    <div class="filter-item level-4" draggable="true" data-filter="ion">
+                        <span>Іонний обмін | Ion Exchange</span>
+                    </div>
+                    
+                    <!-- Level 5 Filters -->
+                    <div class="filter-item level-5" draggable="true" data-filter="separation">
+                        <span>Сепарація | Separation</span>
+                    </div>
+                    <div class="filter-item level-5" draggable="true" data-filter="carbon">
+                        <span>Вугільний фільтр | Carbon Filter</span>
+                    </div>
+                    <div class="filter-item level-5" draggable="true" data-filter="membrane">
+                        <span>Мембранний фільтр | Membrane Filter</span>
+                    </div>
+                    <div class="filter-item level-5" draggable="true" data-filter="chemical">
+                        <span>Хімічне очищення | Chemical Treatment</span>
+                    </div>
+                    <div class="filter-item level-5" draggable="true" data-filter="uv">
+                        <span>УФ-стерилізатор | UV Sterilizer</span>
+                    </div>
+                    <div class="filter-item level-5" draggable="true" data-filter="mineral">
+                        <span>Мінералізатор | Mineralizer</span>
+                    </div>
+                    
+                    <!-- Level 6 Filters -->
+                    <div class="filter-item level-6" draggable="true" data-filter="precipitation">
+                        <span>Осадження | Precipitation</span>
+                    </div>
+                    <div class="filter-item level-6" draggable="true" data-filter="ion">
+                        <span>Іонний обмін | Ion Exchange</span>
+                    </div>
+                    <div class="filter-item level-6" draggable="true" data-filter="membrane">
+                        <span>Мембранний фільтр | Membrane Filter</span>
+                    </div>
+                    <div class="filter-item level-6" draggable="true" data-filter="adsorption">
+                        <span>Адсорбція | Adsorption</span>
+                    </div>
+                    <div class="filter-item level-6" draggable="true" data-filter="chemical">
+                        <span>Хімічне очищення | Chemical Treatment</span>
+                    </div>
+                    <div class="filter-item level-6" draggable="true" data-filter="carbon">
+                        <span>Вугільний фільтр | Carbon Filter</span>
+                    </div>
+                </div>
+
+                <div class="glass-container">
+                    <div class="water-quality-meter">
+                        <div class="meter-fill"></div>
+                        <span class="quality-text">Якість води | Water Quality: 0%</span>
+                    </div>
+                    <div id="water-glass">
+                        <div class="water"></div>
+                        <div class="applied-filters"></div>
+                    </div>
+                    <div class="status-message"></div>
+                    <button class="reset-button">Очистити склянку | Reset Glass</button>
+                </div>
+            </div>
+
+            <div class="level-requirements">
+                <h3>Вимоги рівня | Level Requirements:</h3>
+                <ul id="level-tasks">
+                    <!-- Will be populated by JavaScript -->
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script src="./js/water-game.js"></script>
+</body>
+</html>
+
